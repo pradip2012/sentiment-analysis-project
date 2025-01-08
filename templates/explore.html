@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Expo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body {
+            background-image: url("{{ url_for('static', filename='b1.jpg') }}");
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 41%;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            
+        }
+
+
+        h1{
+            color: orange;
+            text-align: center;
+            margin-top: 5%;
+            /* background-color: rgba(0, 0, 0, 0.5); */
+        }
+        
+        .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .col-3 {
+            flex-basis: 30%;
+            min-width: 250px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        .col-3 img {
+            width: 100%;
+        }
+
+        .small-container {
+            max-width: 1080px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        /*---------testimonial---------------*/
+        .testimonial {
+            padding-top: 100px;
+            /* background-color: rgba(0, 0, 0, 0.5); */
+        }
+
+        .testimonial .col-3 {
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 0 20px 0px rgb(239, 134, 77,1);
+            cursor: pointer;
+            transition: transform 0.5s;
+            background-color: #fff;
+        }
+
+        .testimonial .col-3 img {
+            width: 50px;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+
+        .testimonial .col-3:hover {
+            transform: translateY(-10px);
+        }
+
+        .fa.fa-quote-left {
+            font-size: 34px;
+            color: #ff523b;
+        }
+
+
+        .testimonial .col-3 h3 {
+            font-weight: 600;
+            color: orange;
+            font-size: 16px;
+        }
+
+        /* media query for less than 600 screen size */
+        @media only screen and (max-width:600px) {
+            .row {
+                text-align: center;
+            }
+
+            .col-3 {
+                flex-basis: 80%;
+            }
+            h1{
+                margin-top: 18%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Explore</h1>
+    <!-------testimonial------------>
+    <div class="testimonial">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <h3> Ferromagnetic Pipe Climbing Robot</h3>
+                    <h5>Team - 1.Arthesh Rajendra Todker 2.Om Shashikant Gunjal 3.Yash Rajendra Naikwadi </h5>
+                </div>
+                <div class="col-3">
+                    <h3> Crop Yield  And Price Prediction Using Machine Learning </h3>
+                    <h5>Team - 1.Thorat Ashish  2.Bibave Harshal </h5>
+                </div>
+                <div class="col-3">
+                    <h3> Sign Language Recognition System </h3>
+                    <h5>Team - 1.Kadlag Krishna  2.Gavle Yash </h5>
+                </div>
+                <div class="col-3">
+                    <h3>Real Time Criminal Detection System</h3>
+                    <h5>Team - 1.Tushar Balasaheb Argade   2.Sanket Premnath Dongre  </h5>
+                </div>
+                <div class="col-3">
+                    <h3>Development of Submarine for Surveillance And Engineering Application</h3>
+                    <h5>Team - 1.Katore Sai   2.Pujari Shubham 3.Tejas kale 4.Harishchandre Shreyas  </h5>
+                </div>
+                <div class="col-3">
+                    <h3>SENTIMENTS ANALYSIS USING DL</h3>
+                    <h5>Team - 1.Hase Yuvraj   2.Gopale Bhushan 3.Karwar Pradip 4.Hingmire Shubham  </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

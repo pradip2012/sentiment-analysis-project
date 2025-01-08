@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero {
+            height: 100%;
+            width: 100%;
+            /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("banner.jpg"); */
+            background-image: url("{{ url_for('static', filename='b1.jpg') }}");
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+        }
+
+        .form-box {
+            width: 380px;
+            height: 480px;
+            position: relative;
+            margin: 6% auto;
+            /* background: #fff; */
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .button-box {
+            width: 100px;
+            margin: 55px auto;
+            position: relative;
+            box-shadow: 0 0 20px 9px #ff61241f;
+            border-radius: 30px;
+        }
+
+        .toggle-button {
+            padding: 10px 30px;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            outline: none;
+            position: relative;
+        }
+
+        #btn {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: linear-gradient(to right, #ff105f, #ffad06);
+            border-radius: 30px;
+            transition: .5s;
+        }
+
+        .input-group {
+            top: 120px;
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+            padding: 10px 40px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px 10px;
+            margin: 20px 0;
+            border: none;
+            outline: none;
+            background: transparent;
+            text-align: center;
+            box-shadow: 0 0 20px 9px #da833283;
+            border-radius: 10px;
+
+        }
+
+        .submit-btn {
+            width: 200px;
+            padding: 10px 30px;
+            cursor: pointer;
+            display: block;
+            margin-top: 20px;
+            margin-left: 50px;
+            background: linear-gradient(to right, #ff105f, #ffad06);
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+
+        }
+
+        ::placeholder {
+            color: orange;
+            font-weight: bold;
+        }
+
+        input:focus::placeholder {
+            color: orange;
+        }
+
+        /* Style for entered text */
+        input,label {
+            color: orange;
+            font-weight: bold;
+        }
+
+        /* Optional: Remove browser default focus outline */
+        input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-button">Admin Login</button>
+                <!-- <button type="button" class="toggle-button">Register</button> -->
+            </div>
+            <div class="input-group">
+                <form method="POST" action="{{ url_for('admin') }}">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" class="input-field"
+                        required>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" class="input-field"
+                        required>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+                {% if error_message %}
+                <p style="color: red;">{{ error_message }}</p>
+                {% endif %}
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
